@@ -1,12 +1,14 @@
 import {useState,useEffect} from 'react';
+import useLocalStorage from './useLocalStorage';
 export const Reset = () => {
-    const [email, setEmail] = useState("");
-    useEffect(()=>{
-        let mail = localStorage.getItem("email");
-        if(mail){
-            setEmail(mail);
-        }
-    },[]);
+    const {email, setEmail} = useLocalStorage();
+    // const [email, setEmail] = useState("");
+    // useEffect(()=>{
+    //     let mail = localStorage.getItem("email");
+    //     if(mail){
+    //         setEmail(mail);
+    //     }
+    // },[]);
     return(
         <>
         <div>Reset Your Password</div>

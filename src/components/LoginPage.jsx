@@ -1,17 +1,21 @@
 import {useState, useEffect} from 'react';
+import useLocalStorage from './useLocalStorage';
 export const Login = () => {
-    const [email, setEmail] = useState("")
+    // const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
-    useEffect(()=>{
-        let mail = localStorage.getItem("email");
-        if(mail){
-            setEmail(mail);
-        }
-    },[]);
+    const {email, setEmail} = useLocalStorage();
 
-    useEffect(()=>{
-        localStorage.setItem("email",email);
-    },[email]);
+
+    // useEffect(()=>{
+    //     let mail = localStorage.getItem("email");
+    //     if(mail){
+    //         setEmail(mail);
+    //     }
+    // },[]);
+
+    // useEffect(()=>{
+    //     localStorage.setItem("email",email);
+    // },[email]);
     return(
         <>
         <div>Login to the Portal</div>
